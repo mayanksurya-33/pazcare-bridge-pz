@@ -39,3 +39,7 @@ export default async function handler(req, res) {
     return res.status(500).json({ success: false, error: 'Error' });
   }
 }
+// Check if current URL is the Vercel proxy and redirect back
+if (window.location.href === 'https://pazcare-bridge-pz.vercel.app/api/submit-form') {
+  window.history.back();
+}
